@@ -1,0 +1,146 @@
+body {
+  font-family: "Garamond", sans-serif;
+  background-color: #ffe6e6;
+  color: #fd91c7;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden; /* Prevents body from scrolling */
+  position: relative; /* Ensures that fixed elements stay in place */
+}
+
+#game-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.7);
+  box-sizing: border-box;
+  position: relative; /* Ensures the container stays in place */
+}
+
+h1 {
+  font-size: 48px;
+  text-shadow: 0 0 10px rgb(255, 133, 194, 0.7);
+}
+
+#word-display {
+  font-size: 32px;
+  letter-spacing: 5px;
+}
+
+#guess-input {
+  font-size: 4vw;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ffb6c1;
+  outline: none;
+  text-align: center;
+  box-sizing: border-box; /* Prevents input from causing overflow */
+}
+
+#guess-button {
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 2px solid #ffb6c1;
+  background-color: #ffcccb;
+  color: #ff69b4;
+  cursor: pointer;
+}
+
+#wrong-guesses {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Modal container */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(255, 184, 184, 0.5); /* Semi-transparent background */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* Centered vertically and horizontally */
+    padding: 20px;
+    border: 1px solid #ffffff;
+    width: 80%; /* Width of the modal */
+    max-width: 600px; /* Maximum width */
+    border-radius: 10px; /* Rounded corners */
+    max-height: 80vh; /* Limit height to fit within viewport */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    opacity: 0; /* Initial opacity for animation */
+    transform: translateY(50px); /* Initial position for animation */
+    animation: slideIn 0.5s ease-out forwards; /* Animation for appearance */
+}
+
+
+/* Close button styling */
+.close-button {
+    color: #ff69b4;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Keyframes for smooth modal entrance */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for smooth modal exit */
+@keyframes slideOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+
+.glow-modal {
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #fff;
+  }
+
+  100% {
+    box-shadow: 0 0 20px #fff, 0 0 40px #ffffff, 0 0 60px #ffffff;
+  }
+}
